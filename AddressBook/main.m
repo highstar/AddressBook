@@ -6,12 +6,37 @@
 //  Copyright © 2018年 Gao Xing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "AddressBook.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSString *aName = @"Julia Kochan";
+        NSString *aEmail = @"jewls337@axlc.com";
+        NSString *bName = @"Tony Iannino";
+        NSString *bEmail = @"jtony.iannino@techfitness.com";
+        
+        AddressCard *card1 = [[AddressCard alloc] init];
+        AddressCard *card2 = [[AddressCard alloc] init];
+        
+        // Set up a new address book
+        
+        AddressBook *myBook = [[AddressBook alloc] initWithName:@"Linda's Address Book"];
+        
+        NSLog(@"Entries in address book after creation : %li", [myBook entries]);
+        
+        // Now set up four address cards
+        [card1 setName: aName andEmail: aEmail];
+        [card2 setName: bName andEmail: bEmail];
+        
+        // Add the cards to the address book
+        
+        [myBook addCard: card1];
+        [myBook addCard: card2];
+        
+         NSLog(@"Entries in address book after creation : %li", [myBook entries]);
+        
+        [card1 print];
+        [card2 print];
     }
     return 0;
 }
