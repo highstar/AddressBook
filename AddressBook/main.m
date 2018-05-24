@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Entries in address book after creation : %li", [myBook entries]);
         
         // Now set up four address cards
+        
         [card1 setName: aName andEmail: aEmail];
         [card2 setName: bName andEmail: bEmail];
         
@@ -35,8 +36,9 @@ int main(int argc, const char * argv[]) {
         
          NSLog(@"Entries in address book after creation : %li", [myBook entries]);
         
-        [card1 print];
-        [card2 print];
+        // List all the entries in the book now
+        
+        [myBook list];
     }
     return 0;
 }

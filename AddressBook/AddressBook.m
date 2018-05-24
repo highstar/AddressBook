@@ -44,6 +44,16 @@
         NSLog(@"%-20s   %-32s", [theCard.name UTF8String], [theCard.email UTF8String]);
     
     NSLog(@"==========================================");
+
+}
+
+// look address card by name -- assumes an exact match
+
+-（AddressCard *) lookup: (NSString *) theName {
+    for (AddressCard *nextCard in book)
+        if ([nextCard.name caseInsensitiveCompare: theName] == NSOrderedSame)
+            return nextCard;
+    return nil;
 }
 
 @end
