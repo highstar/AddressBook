@@ -33,7 +33,11 @@
     [book addObject: theCard];
 }
 
-- (NSUInteger)entries {
+- (void) removeCard:(AddressCard *)theCard {
+    [book removeObjectIdenticalTo: theCard];
+}
+
+- (int)entries {
     return [book count];
 }
 
@@ -49,7 +53,7 @@
 
 // look address card by name -- assumes an exact match
 
--（AddressCard *) lookup: (NSString *) theName {
+-(AddressCard *) lookup: (NSString *) theName {
     for (AddressCard *nextCard in book)
         if ([nextCard.name caseInsensitiveCompare: theName] == NSOrderedSame)
             return nextCard;
