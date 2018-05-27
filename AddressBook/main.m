@@ -34,20 +34,14 @@ int main(int argc, const char * argv[]) {
         [myBook addCard: card1];
         [myBook addCard: card2];
         
-        // Look up a person by name
+       // List the unsorted book
         
-        NSLog(@"Tony Iannino");
-        myCard = [myBook lookup: @"tony iannino"];
+        [myBook list];
         
-        if (myCard != nil)
-            [myCard print];
-        else
-            NSLog(@"Not found!");
+        // Sort it and list it again
         
-        // Now remove the entry from the phone book
-        
-        [myBook removeCard:myCard];
-        [myBook list]; // verify it's gone
+        [myBook sort];
+        [myBook list];
     }
     return 0;
 }

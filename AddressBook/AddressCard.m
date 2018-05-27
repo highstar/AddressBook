@@ -35,4 +35,8 @@
     else return NO;
 }
 
+- (NSComparisonResult) compareNames: (id) element {
+    return [name compare: [element name]];
+}
+
 @end

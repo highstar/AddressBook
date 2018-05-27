@@ -60,4 +60,8 @@
     return nil;
 }
 
+- (void) sort {
+    [book sortUsingComparator: @selector(compareNames:)];
+}
+
 @end
