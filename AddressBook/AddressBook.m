@@ -61,7 +61,10 @@
 }
 
 - (void) sort {
-    [book sortUsingComparator: @selector(compareNames:)];
+    [book sortUsingComparator:
+     ^(id obj1, id obj2) {
+         return [[obj1 name] compare: [obj2 name]];
+     }];
 }
 
 @end
