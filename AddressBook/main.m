@@ -29,8 +29,6 @@ int main(int argc, const char * argv[]) {
         
         AddressBook *myBook = [AddressBook alloc];
         
-        AddressCard *myCard;
-        
         // Now set up four address cards
         
         [card1 setName: aName andEmail: aEmail];
@@ -47,14 +45,10 @@ int main(int argc, const char * argv[]) {
         [myBook addCard: card3];
         [myBook addCard: card4];
         
-       // List the unsorted book
-        
-        [myBook list];
-        
-        // Sort it and list it again
-        
         [myBook sort];
-        [myBook list];
+        
+        if ([NSKeyedArchiver archiveRootObject:myBook toFile:@"addrbook.arch"] == NO)
+            NSLog(@"archiving failed");
     }
     return 0;
 }

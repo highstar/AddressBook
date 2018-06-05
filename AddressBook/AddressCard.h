@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AddressCard: NSObject
+@interface AddressCard: NSObject <NSCoding, NSCopying>
 
 @property (copy, nonatomic) NSString *name, *email;
 
 - (void) setName: (NSString *) theName andEmail: (NSString *) theEmail;
+- (NSComparisonResult) compareNames: (id) element;
 - (void) print;
+
+// Additional method for NSCopying protocol
+- (void) assignName: (NSString *) theName andEmail: (NSString *) theEmail;
 
 @end

@@ -35,4 +35,15 @@
     else return NO;
 }
 
+- (void) encodeWithCoder:(NSCoder *) encoder {
+    [encoder encodeObject:name forKey:@"AddressCardName"];
+    [encoder encodeObject:email forKey:@"AddressCardEmail"];
+}
+
+- (id) initWithCoder:(NSCoder *) decoder {
+    name = [decoder decodeObjectForKey:@"AddressCardName"];
+    email = [decoder decodeObjectForKey:@"AddressCardEmail"];
+    
+    return self;
+}
 @end
